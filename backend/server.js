@@ -16,5 +16,4 @@ const connection = mongoose.connection;
 const jobRouter = require('./routes/jobs');
 const userRouter = require('./routes/users');
 
-app.use('/jobs', jobRouter);
 app.use('/users', userRouter);
