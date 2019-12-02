@@ -21,7 +21,7 @@ connection.once('open', () => {
     console.log('Database connection successful');
 });
 
-const jobRouter = require('./routes/jobs');
-const userRouter = require('./routes/users');
+const jobRouter = require('./jobs/jobs');
+const userRouter = require('./users/users');
 
 app.use('/users', userRouter);
