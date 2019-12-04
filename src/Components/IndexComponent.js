@@ -7,8 +7,6 @@ export default class IndexComponent extends Component{
 			
 	}
 
-
-
 	render(){
 		return(
 			<div>
