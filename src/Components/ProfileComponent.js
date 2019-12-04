@@ -21,18 +21,10 @@ export default class IndexComponent extends Component{
 	      			// console.log(res.data[0])
 	      			this.setState({firstName: res.data[1]});
                     this.setState({lastName: res.data[2]});
-                    
-
-
+                    this.setState({username: res.data[3]});
+                    this.setState({email: res.data[5]});
+                
 	      		});
-
-	    // axios.get('http://127.0.0.1:5000/')
-      	// 	.then(res => {
-
-      	// 		console.log(res);
-      	// 		this.setState({posts: res.data});
-      	// 	});
-
       	
     }
 
@@ -41,6 +33,8 @@ export default class IndexComponent extends Component{
 			<div>
                 {this.state.firstName}
                 {this.state.lastName}
+                {this.state.username}
+                {this.state.email}
 			</div>
 
 		)
