@@ -23,6 +23,16 @@ router.route('/add').post((req, res) => {
     newJob.save()
     .then(() => res.status(200).json('Successfully added job'))
     .catch(err => res.status(400).json('Error ' + err));
-})
+});
+
+router.route('/me').get((req, res) => {
+    // find from user _id, hopefully stored in local storage or cookie
+    return {
+        "jobs":[
+            {"companyName": "Microsoft", "date": null, "jobPostingTitle": "Dev Ops", "status": "Applied"},
+            {"companyName": "Yahoo", "date": "", "jobPostingTitle": "Software Developer", "status": "Applied"}
+        ] 
+    }
+});
 
 module.exports = router;
