@@ -12,7 +12,7 @@ export default function NavigationBar(){
 		      <Nav.Link href="/">Home</Nav.Link>
 		      <Nav.Link href="/jobs">Jobs</Nav.Link>
 		      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-		        <NavDropdown.Item href="profile/:username">Profile</NavDropdown.Item>
+		        <NavDropdown.Item href="profile">Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
 		        <NavDropdown.Item href="settings">Settings</NavDropdown.Item>
                 <NavDropdown.Divider />
