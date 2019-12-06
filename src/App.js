@@ -5,6 +5,7 @@ import SettingsComponent from './Components/SettingsComponent'
 // import JobComponent from './Components/JobComponent'
 import ProfileComponent from './Components/ProfileComponent'
 import LoginComponent from './Components/LoginComponent';
+
 class App extends Component {
   render() {
     return (
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path='/profile' component={ProfileComponent}/>
           <Route path='/settings' component={SettingsComponent}/>
           <Route path='/login' component={LoginComponent}/>
+
         </Switch>
       </BrowserRouter>
     );

@@ -35,8 +35,12 @@ export default class SettingsComponent extends Component{
 	    
 		axios.post('http://127.0.0.1:5000/users/update/' + this.state.id, changeableSettings)
 	        .then(res => {
+<<<<<<< HEAD
                 console.log(res)
                 window.location.reload(false);
+=======
+				console.log(res)
+>>>>>>> 86d28da02ba7c46c67310843495ab6ead2116a7d
 	        })
 	        .catch(err => {
 	            console.log(err.response);
@@ -47,7 +51,11 @@ export default class SettingsComponent extends Component{
     
     componentDidMount() {
         // axios.defaults.withCredentials = true;
+<<<<<<< HEAD
         console.log(localStorage.getItem('isLoggedIn'));
+=======
+        
+>>>>>>> 86d28da02ba7c46c67310843495ab6ead2116a7d
         //Need to change this link so that we get the unique user
 		axios.get('http://localhost:5000/users/' )
 	      	.then(res => {
@@ -71,18 +79,43 @@ export default class SettingsComponent extends Component{
                 last Name : {this.state.lastName}  <br/>
                 username : {this.state.username} <br/>
                 id : {this.state.id} <br/>
+<<<<<<< HEAD
                 
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Email: <input name="email" value={this.state.email} onChange={this.handleChange}/>
                     </label>
+=======
+
+                <form onSubmit={this.handleSubmit}>
+                    <hr/>
+                    email:  
+                    <textarea  
+                        cols="25"
+                        rows = "1" 
+                        name = "email" 
+                        value = {this.state.email}
+                        onChange={this.handleChange}
+                    />
+>>>>>>> 86d28da02ba7c46c67310843495ab6ead2116a7d
                     <button>Save</button>
                 </form>
 
                 <form onSubmit={this.handleSubmit}>
+<<<<<<< HEAD
                     <label>
                         Password: <input name="password" value={this.state.password} onChange={this.handleChange}/>
                     </label>
+=======
+                    password: 	
+                    <textarea  
+                        cols="25"
+                        rows = "1" 
+                        name = "password" 
+                        value = {this.state.password}
+                        onChange={this.handleChange}
+                    />
+>>>>>>> 86d28da02ba7c46c67310843495ab6ead2116a7d
                     <button>Save</button>
                 </form>
 

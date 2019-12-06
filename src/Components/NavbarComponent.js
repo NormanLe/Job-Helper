@@ -37,4 +37,5 @@ export default class NavigationBar extends Component{
 		)
 	}
 
+
 }
