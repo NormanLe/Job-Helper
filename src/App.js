@@ -5,7 +5,8 @@ import IndexComponent from './Components/IndexComponent'
 import SettingsComponent from './Components/SettingsComponent'
 // import JobComponent from './Components/JobComponent'
 import ProfileComponent from './Components/ProfileComponent'
-import LoginComponent from './Components/LoginComponent';
+import LoginComponent from './Components/LoginComponent'
+import SignUpComponent from './Components/SignUpComponent'
 
 class App extends Component {
   
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path='/profile' component={ProfileComponent}/>
           <Route path='/settings' component={SettingsComponent}/>
           <Route path='/login' component={LoginComponent}/>
+          <Route path='/signup' component={SignUpComponent}/>
 
         </Switch>
       </BrowserRouter>

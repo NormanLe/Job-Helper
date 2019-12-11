@@ -9,10 +9,12 @@ export default class LoginComponent extends Component{
         super();
         this.state ={
             email: "",
-            password: "",
+            password: ""
+           
         }
     }
 
+    
     handleChange = event => {
 		this.setState({
 			[event.target.name]: event.target.value 
@@ -25,15 +27,16 @@ export default class LoginComponent extends Component{
 	    const loginCredentials = {
 	        email: this.state.email,
 	       	password : this.state.password
-	    };
-
-	    
+        };
+        
 		axios.post('http://127.0.0.1:5000/users/login/', loginCredentials)
 	        .then(res => {
-                console.log("login success")
-                // console.log(this.props.isLoggedIn);
+                console.log(res)
                 localStorage.setItem('isLoggedIn', true);
-                window.location.href='/'
+                localStorage.setItem('currentUserId',res.data._id);
+                // console.log()
+                this.forceUpdate();
+                // window.location.href='/' //Change this link later
 
 	        })
 	        .catch(err => {
@@ -45,13 +48,10 @@ export default class LoginComponent extends Component{
     render(){
         return(
             <div>
-                <NavbarComponent/>
-                {this.props.nuts}
-                
-
+                <NavbarComponent />
                 
                 <form onSubmit={this.handleSubmit}>
-                    
+        
                     <label>
                         Email: <input name="email" value={this.state.email} onChange={this.handleChange}/>
                     </label>
