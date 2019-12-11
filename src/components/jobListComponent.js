@@ -10,6 +10,18 @@ export default class JobListComponent extends Component {
         };
     } 
 
+    componentDidMount() {
+        if (this.props.page === 'index'){
+            axios.get('http://localhost:5000/jobs/me')
+                .then((event) => { 
+                    this.setState({
+                        jobs: event.data
+                    });
+            });
+            
+        }
+     }
+
     filterJobs(displayedJobs, filter) {
         // do some logic on props based on filter
         
@@ -23,11 +35,10 @@ export default class JobListComponent extends Component {
     }
 
     renderTableData() {
-        console.log(this.state.jobs)
         return this.state.jobs.map((job, index) => {
             const { id, companyName, date, jobPostingTitle } = job 
             return (
-                <tr key={id}>
+                <tr key={index}>
                     <td>{id}</td>
                     <td>{companyName}</td>
                     <td>{date}</td>
@@ -46,7 +57,6 @@ export default class JobListComponent extends Component {
                     {this.renderTableData()}
                 </tbody>
                 </table>
-                <div>kek</div>
             </div>
         )
     }
