@@ -34,7 +34,6 @@ export default class LoginComponent extends Component{
                 console.log(res)
                 localStorage.setItem('isLoggedIn', true);
                 localStorage.setItem('currentUserId',res.data._id);
-                // console.log()
                 this.forceUpdate();
                 // window.location.href='/' //Change this link later
 

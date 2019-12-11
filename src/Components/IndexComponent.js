@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-// import NavbarComponent from './NavbarComponent'
-
 import LoginComponent from './LoginComponent';
+import JobListComponent from './JobListComponent';
 
 export default class IndexComponent extends Component{
 	constructor(props){
@@ -14,6 +13,7 @@ export default class IndexComponent extends Component{
 			
 			<div>
 				<LoginComponent  /> 
+				<JobListComponent page="index" />
 			</div>
 
 		)

@@ -36,10 +36,10 @@ export default class JobListComponent extends Component {
 
     renderTableData() {
         return this.state.jobs.map((job, index) => {
-            const { id, companyName, date, jobPostingTitle } = job 
+            const { _id, companyName, date, jobPostingTitle } = job 
             return (
                 <tr key={index}>
-                    <td>{id}</td>
+                    <td>{_id}</td>
                     <td>{companyName}</td>
                     <td>{date}</td>
                     <td>{jobPostingTitle}</td>
