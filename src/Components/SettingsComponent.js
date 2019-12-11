@@ -50,15 +50,16 @@ export default class SettingsComponent extends Component{
         // axios.defaults.withCredentials = true;
         console.log(localStorage.getItem('isLoggedIn'));
         //Need to change this link so that we get the unique user
-		axios.get('http://localhost:5000/users/' )
+		axios.get('http://localhost:5000/users/' + localStorage.getItem('currentUserId') )
 	      	.then(res => {
+                  console.log(res.data._id)
                       // console.log(res.data[0]['username'])
-                    this.setState({id:res.data[0]['_id']})
-	      			this.setState({firstName: res.data[0]['firstName']});
-                    this.setState({lastName: res.data[0]['lastName']});
-                    this.setState({username: res.data[0]['username']});
-                    this.setState({email: res.data[0]['email']});
-                    this.setState({password: res.data[0]['password']})
+                    this.setState({id:res.data._id})
+	      			this.setState({firstName: res.data.firstName});
+                    this.setState({lastName: res.data.lastName});
+                    this.setState({username: res.data.username});
+                    this.setState({email: res.data.email});
+                    this.setState({password: res.data.password})
                 
 	      		});
       	

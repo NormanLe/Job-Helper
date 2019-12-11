@@ -38,7 +38,8 @@ router.route('/login').post(async(req, res) => {
         }
         else{
             console.log("Sucessfully logged in");
-            res.status(200).send('success');
+            return res.json(user)
+            // res.status(200).send('success');
         }
     }catch (error) {
         res.status(400).send(error)

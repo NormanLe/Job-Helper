@@ -8,19 +8,10 @@ export default class IndexComponent extends Component{
 	}
 	render(){
 		
-	// 	let display;
-	// 	if (this.state.isLoggedIn === true) {
-	// 		display = <NavbarComponent/>
-	// 		console.log("In")
-	//    } else {
-	// 	   	display = <LoginComponent nuts = "false" />
-	// 		console.log("Out")
-
-	//    }
 		return(
-		
+			
 			<div>
-				<LoginComponent/> 
+				<LoginComponent  /> 
 			</div>
 
 		)
