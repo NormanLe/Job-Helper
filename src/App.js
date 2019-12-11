@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
-import IndexComponent from './components/indexComponent'
-// import {SettingComponent} from './Components/SettingComponent'
-// import JobListComponent from './components/jobListComponent'
-// import {ProfileComponent} from './Components/ProfileComponent'
+
+import IndexComponent from './Components/IndexComponent'
+import SettingsComponent from './Components/SettingsComponent'
+// import JobComponent from './Components/JobComponent'
+import ProfileComponent from './Components/ProfileComponent'
 
 class App extends Component {
   
@@ -12,9 +13,11 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={IndexComponent}/>
-          <Route exact path='/index' component={IndexComponent}/>
-          {/* <Route path='/settings' componenet={SettingComponent}/>
-          <Route path='/profile/:username' component={ProfileComponent}/> */}
+
+          {/* <Route path='/jobs' component={JobComponent}/> */}
+          {/* <Route path='/job/:id' component={JobComponent}/> */}
+          <Route path='/profile' component={ProfileComponent}/>
+          <Route path='/settings' component={SettingsComponent}/> */}
         </Switch>
       </BrowserRouter>
     );

@@ -60,14 +60,14 @@ router.route('/:id').get((req,res) =>{
 
 router.route('/update/:id').post(async(req, res) =>{
     
-    const Id = req.params.id;
+    const id = req.params.id;
     const email = req.body.email;
     const password = req.body.password;
     console.log(email);
     console.log(password);
 
     try{
-        const user = await User.findById(Id);
+        const user = await User.findById(id);
         console.log(user.id);
         if(!user){
             throw new Error({ error: 'No User'});
@@ -77,7 +77,7 @@ router.route('/update/:id').post(async(req, res) =>{
         user.email = email;
         user.password = password;
         await user.save();
-        res.status(400).send('Update Successful');
+        res.status(200).send('Update Successful');
        
     }catch (error) {
         res.status(400).send(error)
