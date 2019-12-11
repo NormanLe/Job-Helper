@@ -23,6 +23,13 @@ router.route('/add').post((req, res) => {
     newJob.save()
     .then(() => res.status(200).json('Successfully added job'))
     .catch(err => res.status(400).json('Error ' + err));
-})
+});
+
+router.route('/me').get((req, res) => {
+    Job.find({})
+    .then(jobs => res.json(jobs))
+    .catch(err => res.status(400).json('Error ' + err));
+   
+});
 
 module.exports = router;

@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+
 import NavbarComponent from './NavbarComponent'
 import LoginComponent from './LoginComponent';
 
 export default class IndexComponent extends Component{
 	constructor(props){
 		super();
-
-		this.state ={
+		this.state = {
+			jobs: [],
 			isLoggedin: false
 		}
 
@@ -31,6 +32,8 @@ export default class IndexComponent extends Component{
 		return(
 		
 			<div>
+            	<NavbarComponent/>
+				<JobListComponent page="index" />
 				{display}  
 			</div>
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
+
 import IndexComponent from './Components/IndexComponent'
 import SettingsComponent from './Components/SettingsComponent'
 // import JobComponent from './Components/JobComponent'
@@ -7,11 +8,13 @@ import ProfileComponent from './Components/ProfileComponent'
 import LoginComponent from './Components/LoginComponent';
 
 class App extends Component {
+  
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={IndexComponent}/>
+
           {/* <Route path='/jobs' component={JobComponent}/> */}
           {/* <Route path='/job/:id' component={JobComponent}/> */}
 
