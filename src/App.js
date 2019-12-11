@@ -4,6 +4,7 @@ import IndexComponent from './Components/IndexComponent'
 import SettingsComponent from './Components/SettingsComponent'
 // import JobComponent from './Components/JobComponent'
 import ProfileComponent from './Components/ProfileComponent'
+import LoginComponent from './Components/LoginComponent';
 
 class App extends Component {
   render() {
@@ -13,8 +14,11 @@ class App extends Component {
           <Route exact path='/' component={IndexComponent}/>
           {/* <Route path='/jobs' component={JobComponent}/> */}
           {/* <Route path='/job/:id' component={JobComponent}/> */}
+
           <Route path='/profile' component={ProfileComponent}/>
-          <Route path='/settings' component={SettingsComponent}/> */}
+          <Route path='/settings' component={SettingsComponent}/>
+          <Route path='/login' component={LoginComponent}/>
+
         </Switch>
       </BrowserRouter>
     );

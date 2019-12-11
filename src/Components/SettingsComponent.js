@@ -35,7 +35,9 @@ export default class SettingsComponent extends Component{
 	    
 		axios.post('http://127.0.0.1:5000/users/update/' + this.state.id, changeableSettings)
 	        .then(res => {
-				console.log(res)
+                console.log(res)
+                window.location.reload(false);
+
 	        })
 	        .catch(err => {
 	            console.log(err.response);
@@ -46,7 +48,7 @@ export default class SettingsComponent extends Component{
     
     componentDidMount() {
         // axios.defaults.withCredentials = true;
-        
+        console.log(localStorage.getItem('isLoggedIn'));
         //Need to change this link so that we get the unique user
 		axios.get('http://localhost:5000/users/' )
 	      	.then(res => {
@@ -70,29 +72,20 @@ export default class SettingsComponent extends Component{
                 last Name : {this.state.lastName}  <br/>
                 username : {this.state.username} <br/>
                 id : {this.state.id} <br/>
-
+                
                 <form onSubmit={this.handleSubmit}>
-                    <hr/>
-                    email:  
-                    <textarea  
-                        cols="25"
-                        rows = "1" 
-                        name = "email" 
-                        value = {this.state.email}
-                        onChange={this.handleChange}
-                    />
+                    <label>
+                        Email: <input name="email" value={this.state.email} onChange={this.handleChange}/>
+                    </label>
+
                     <button>Save</button>
                 </form>
 
                 <form onSubmit={this.handleSubmit}>
-                    password: 	
-                    <textarea  
-                        cols="25"
-                        rows = "1" 
-                        name = "password" 
-                        value = {this.state.password}
-                        onChange={this.handleChange}
-                    />
+                    <label>
+                        Password: <input name="password" value={this.state.password} onChange={this.handleChange}/>
+                    </label>
+
                     <button>Save</button>
                 </form>
 
