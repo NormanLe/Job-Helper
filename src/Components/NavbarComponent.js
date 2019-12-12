@@ -1,16 +1,40 @@
 import React, {Component} from 'react'
 import {Nav,Navbar,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
-
-
+import {Redirect} from 'react-router-dom'
 
 export default class NavigationBar extends Component{
 
-
+	constructor(props){
+        super();
+        this.state ={
+           searchText: ""
+           
+        }
+    }
 	handlelogout(){
 		localStorage.setItem('isLoggedIn',false);
 		window.location.href='/'
 	}
 
+	handleChange = event => {
+		this.setState({
+			[event.target.name]: event.target.value 
+		})
+    }
+	handleSearch = event => {
+		console.log('d')
+		// <Redirect to={{
+		// 	pathname: '/search',
+		// 	state: this.state.searchText
+		// }} />	
+		
+		// window.location.href='/search' //Change this link later
+
+		localStorage.setItem('search',this.state.searchText)
+		window.location.href='/search/'+ this.state.searchText//Change this link later
+
+		
+    }
 	
 	render(){
 		// console.log('NavBar ' + localStorage.getItem('isLoggedIn'));
@@ -40,7 +64,6 @@ export default class NavigationBar extends Component{
 
 		return(
 			<div>
-
 			<Navbar bg="light" expand="lg">
 			<Navbar.Brand className='split' href="/">Job-Helper</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -52,9 +75,10 @@ export default class NavigationBar extends Component{
 				{login}
 				{signup}
 				</Nav>
-				<Form inline>
-				<FormControl type="text" placeholder="Search" className="mr-sm-2" />
-				<Button variant="outline-success">Search</Button>
+				<Form inline >
+					{/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
+					<input name="searchText" value={this.state.searchText} onChange={this.handleChange}/>
+					<Button variant="outline-success" onClick={this.handleSearch}>Search</Button>
 				</Form>
 			</Navbar.Collapse>
 			</Navbar>
