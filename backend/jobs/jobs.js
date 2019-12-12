@@ -32,4 +32,10 @@ router.route('/me').get((req, res) => {
    
 });
 
+router.route('/search/query/:companyName').get((req,res)=>{
+    Job.find({companyName:{'$regex' : req.params.companyName, '$options' : 'i'}})
+    .then(jobs => res.json(jobs))
+    .catch(err => res.status(400).json('Error ' + err));
+});
+
 module.exports = router;

@@ -20,6 +20,23 @@ export default class JobListComponent extends Component {
             });
             
         }
+        else if (this.props.page === 'jobs'){
+            axios.get('http://localhost:5000/jobs/me')
+                .then((event) => { 
+                    this.setState({
+                        jobs: event.data
+                    });
+            });
+        }
+
+        else{
+            axios.get('http://localhost:5000/jobs/search/query/' + this.props.search)
+	            .then((event) => { 
+                    this.setState({
+                        jobs: event.data
+                    });
+                });
+        }
      }
 
     filterJobs(displayedJobs, filter) {
