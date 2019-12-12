@@ -7,7 +7,7 @@ import ProfileComponent from './Components/ProfileComponent'
 import LoginComponent from './Components/LoginComponent'
 import SignUpComponent from './Components/SignUpComponent'
 import SearchQueryComponent from './Components/SearchQueryComponent'
-import JobComponent from './Components/JobComponent'
+import JobsComponent from './Components/JobsComponent'
 
 class App extends Component {
   
@@ -16,15 +16,12 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={IndexComponent}/>
-
-         
-          {/* <Route path='/job/:id' component={JobComponent}/> */}
-          <Route path='/jobs' component={JobComponent}/>
+          <Route path='/jobs' component={JobsComponent}/>
           <Route path='/profile' component={ProfileComponent}/>
           <Route path='/settings' component={SettingsComponent}/>
           <Route path='/login' component={LoginComponent}/>
           <Route path='/signup' component={SignUpComponent}/>
-          <Route path='/search/:id' component={SearchQueryComponent}/>
+          <Route path='/search/' component={SearchQueryComponent}/>
 
         </Switch>
       </BrowserRouter>

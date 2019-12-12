@@ -1,49 +1,20 @@
 import React, {Component} from 'react'
-import {Nav,Navbar,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
-import {Redirect} from 'react-router-dom'
+import {Nav,Navbar,NavDropdown} from 'react-bootstrap'
+import SearchBarComponent from './SearchBarComponent'
 
 export default class NavigationBar extends Component{
 
-	constructor(props){
-        super();
-        this.state ={
-           searchText: ""
-           
-        }
-    }
 	handlelogout(){
 		localStorage.setItem('isLoggedIn',false);
 		window.location.href='/'
 	}
 
-	handleChange = event => {
-		this.setState({
-			[event.target.name]: event.target.value 
-		})
-    }
-	handleSearch = event => {
-		console.log('d')
-		// <Redirect to={{
-		// 	pathname: '/search',
-		// 	state: this.state.searchText
-		// }} />	
-		
-		// window.location.href='/search' //Change this link later
-
-		localStorage.setItem('search',this.state.searchText)
-		window.location.href='/search/'+ this.state.searchText//Change this link later
-
-		
-    }
-	
 	render(){
-		// console.log('NavBar ' + localStorage.getItem('isLoggedIn'));
 		let dropdown;
 		let login;
 		let signup;
 		if(localStorage.getItem('isLoggedIn') === 'true'){ 
-			// console.log('s');
-			//then we are logged In
+		
 			dropdown = <NavDropdown title="Dropdown" id="basic-nav-dropdown">
 					<NavDropdown.Item href="profile">Profile</NavDropdown.Item>
 					<NavDropdown.Divider />
@@ -56,8 +27,7 @@ export default class NavigationBar extends Component{
 		}
 
 		else{
-			// console.log('h')
-			//then we are logged out
+			
 			login = <Nav.Link href="/login">Login</Nav.Link>
 			signup = <Nav.Link href="/signup">Sign Up</Nav.Link>
 		}
@@ -75,11 +45,7 @@ export default class NavigationBar extends Component{
 				{login}
 				{signup}
 				</Nav>
-				<Form inline >
-					{/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-					<input name="searchText" value={this.state.searchText} onChange={this.handleChange}/>
-					<Button variant="outline-success" onClick={this.handleSearch}>Search</Button>
-				</Form>
+				<SearchBarComponent />
 			</Navbar.Collapse>
 			</Navbar>
 			</div>

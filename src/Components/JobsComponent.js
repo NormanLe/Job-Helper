@@ -3,13 +3,13 @@ import JobListComponent from './JobListComponent'
 import NavbarComponent from './NavbarComponent';
 
 
-export default class JobComponent extends Component{
+export default class JobsComponent extends Component{
 
     render(){
         return(
             <div>
                 <NavbarComponent  /> 
-                <JobListComponent page="index" />
+                <JobListComponent page="jobs" />
             </div>
         )
     }

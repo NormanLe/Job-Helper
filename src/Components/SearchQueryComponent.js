@@ -3,41 +3,18 @@ import NavbarComponent from './NavbarComponent'
 import JobListComponent from './JobListComponent'
 
 
-export default class SeatchQueryComponent extends Component{
-
-    // constructor(props){
-    //     super();
-    //     this.state ={
-    //        searchText: ""
-           
-    //     }
-    // }
-
-    // componentDidMount() {
-    //     axios.get('http://localhost:5000/jobs/search/query/' + localStorage.getItem('search'))
-	//         .then(res => {
-    //             console.log(res)
-    //             this.setState(searchText:res.something)
-
-	//         })
-	//         .catch(err => {
-	//             console.log(err.response);
-	//         })
-            
-    // }
-     
-
-    
+export default class SearchQueryComponent extends Component{
 
     render(){
+        let path = this.props.location.pathname
+        let searchText = path.substring(path.lastIndexOf('/') + 1);
+       
         return(
+           
             <div>
                 <NavbarComponent />
-                <JobListComponent />
+                <JobListComponent search={searchText}/>
                
-                
-                {/* {console.log(localStorage.getItem('search'))} */}
-
             </div>
         )
     }
