@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+scraping/chromedriver
+scraping/chromedriver_mac64.zip
