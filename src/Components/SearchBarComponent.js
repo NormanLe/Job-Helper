@@ -33,11 +33,11 @@ export default class SearchBarComponent extends Component{
 		return(
 			<div>
 			
-				<Form inline >
+				<form  >
 					{/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
 					<input name="searchText" value={this.state.searchText} onChange={this.handleChange}/>
-					<Button variant="outline-success" onClick={this.handleSearch}>Search</Button>
-				</Form>
+					<Button  variant="outline-success" onClick = {this.handleSearch} >Search</Button>
+				</form>
 			
 			</div>
 		)
