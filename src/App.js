@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
-
 import IndexComponent from './Components/IndexComponent'
 import SettingsComponent from './Components/SettingsComponent'
 import ProfileComponent from './Components/ProfileComponent'
@@ -21,7 +20,7 @@ class App extends Component {
           <Route path='/settings' component={SettingsComponent}/>
           <Route path='/login' component={LoginComponent}/>
           <Route path='/signup' component={SignUpComponent}/>
-          <Route path='/search/' component={SearchQueryComponent}/>
+          <Route path='/search' component={SearchQueryComponent}/>
 
         </Switch>
       </BrowserRouter>
