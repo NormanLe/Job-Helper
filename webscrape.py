@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup as soup
 from datetime import datetime, timedelta
 
 
-filename = "test.csv"
+filename = "jobs.csv"
 f = open(filename, 'w')
 
 headers = "jobPostingTitle , companyName, Location, date, status\n"
@@ -12,7 +12,7 @@ f.write(headers)
 
 def main():
    
-    my_url = 'https://www.monster.com/jobs/search/?q=entry-level-software-engineer&stpage=1&page=1'
+    my_url = 'https://www.monster.com/jobs/search/?q=entry-level-software-engineer&stpage=1&page=10'
 
     uClient = uReq(my_url)
     page_html = uClient.read()
